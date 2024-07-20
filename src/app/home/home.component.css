@@ -1,8 +1,13 @@
 .container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .content {
+  width: 50%;
+  margin-top: 100px;
+}
+
+.warning {
   width: 50%;
 }

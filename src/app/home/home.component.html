@@ -2,27 +2,32 @@
   <div class="content">
     <div [bdcWalkTriggerFor]="example1Step1">Step 1 teste</div>
     <div [bdcWalkTriggerFor]="example1Step2">Step 2</div>
+    <app-walkthroughcustom
+      *ngIf="isShowWalk && state === 'step1'"
+    ></app-walkthroughcustom>
   </div>
   <div class="content">
     <div [bdcWalkTriggerFor]="example1Step3">Step 3</div>
   </div>
   <button (click)="reset()" mat-stroked-button>Reset</button>
+  <button (click)="upArray()" mat-stroked-button>Up</button>
+  <app-walkthroughcustom
+    *ngIf="isShowWalk && state === 'step2'"
+  ></app-walkthroughcustom>
 </div>
 
 <bdc-walk-popup
   #example1Step1
   name="example1Step1"
-  header="Step 1"
-  xPosition="after"
+  header="Gerar Recomendação"
+  sideNoteText="1/3"
   [horizontal]="true"
   [showButton]="true"
   xPosition="after"
   [mustCompleted]="{ dialogWelcome: true }"
   class="warning"
 >
-  <div class="popup"></div>
-  <div>teste</div>
-  <div>Close this popup to display the next one.</div>
+  <div>Para gerar uma recomendação voce precisa inserir um CPF ou CNPJ.</div>
 </bdc-walk-popup>
 
 <bdc-walk-popup

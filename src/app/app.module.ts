@@ -9,9 +9,10 @@ import { BdcWalkModule } from 'bdc-walkthrough';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { WalkthroughcustomComponent } from './walkthroughcustom/walkthroughcustom.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, WalkthroughcustomComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
