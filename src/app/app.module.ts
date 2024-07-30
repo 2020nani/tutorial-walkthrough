@@ -10,9 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { WalkthroughcustomComponent } from './walkthroughcustom/walkthroughcustom.component';
+import { TesteComponent } from './teste/teste.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, WalkthroughcustomComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    WalkthroughcustomComponent,
+    TesteComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

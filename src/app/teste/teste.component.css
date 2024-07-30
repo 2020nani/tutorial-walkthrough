@@ -1,0 +1,51 @@
+.container {
+  background-color: blue;
+  width: 100vw;
+  height: 100vh;
+}
+.tour-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparente para o fundo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.tour-step {
+  position: absolute;
+  background: #fff; /* Fundo branco do popup */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: none; /* Sem sombras no popup */
+  text-align: center;
+  max-width: 300px;
+}
+
+.highlight {
+  position: relative;
+  background-color: #fff; /* Fundo branco para o destaque */
+  border: 2px solid #ccc; /* Borda para definir o destaque */
+  border-radius: 5px; /* Arredondar bordas */
+  padding: 5px; /* Espaçamento para evitar sobreposição */
+  margin: 0;
+  z-index: 1; /* Garante que o destaque esteja acima dos outros elementos */
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: transparent; /* Fundo transparente ao redor do destaque */
+  border: 2px solid #ccc; /* Borda para o destaque */
+  border-radius: 5px; /* Arredondar bordas do destaque */
+  z-index: -1; /* Garante que o destaque esteja abaixo do conteúdo */
+}
