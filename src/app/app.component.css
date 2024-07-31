@@ -41,3 +41,25 @@ main {
   margin: 0 auto;
   padding: 10px 0;
 }
+
+.highlight {
+  position: relative;
+  background-color: #fff !important; /* Fundo branco para o destaque */
+  border: 2px solid #ccc; /* Borda para definir o destaque */
+  border-radius: 5px; /* Arredondar bordas */
+  padding: 5px; /* Espaçamento para evitar sobreposição */
+  z-index: 1001 !important; /* Garante que o destaque esteja acima dos outros elementos */
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: transparent; /* Fundo transparente ao redor do destaque */
+  border: 2px solid #ccc; /* Borda para o destaque */
+  border-radius: 5px; /* Arredondar bordas do destaque */
+  z-index: -1; /* Garante que o destaque esteja abaixo do conteúdo */
+}

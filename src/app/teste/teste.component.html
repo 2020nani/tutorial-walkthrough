@@ -1,13 +1,8 @@
-<div class="container">
-  <button id="step1" (click)="startTour()">Iniciar Tour</button>
-  <div id="step2">Outro ponto do tour</div>
-
-  <!-- Contêiner do Walkthrough -->
-  <div *ngIf="showTour" class="tour-overlay">
-    <div class="tour-step" [ngStyle]="currentStepStyle">
-      <h3>{{ currentStepTitle }}</h3>
-      <p>{{ currentStepContent }}</p>
-      <button (click)="nextStep()">Próximo</button>
-    </div>
+<!-- Contêiner do Walkthrough -->
+<div *ngIf="showTour" class="tour-overlay">
+  <div class="tour-step" [ngStyle]="currentStepStyle">
+    <h3>{{ currentStepTitle }}</h3>
+    <p>{{ currentStepContent }}</p>
+    <button (click)="nextStep()">Próximo</button>
   </div>
 </div>

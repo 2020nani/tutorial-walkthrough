@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { TesteComponent } from './teste/teste.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  @ViewChild(TesteComponent) tourComponent!: TesteComponent;
   title = 'walkthrough';
+  highlight = '';
+  steps = [
+    {
+      title: 'Bem-vindo!',
+      content: 'Este é o primeiro passo do tour.',
+      selector: '#step1',
+    },
+    {
+      title: 'Próximo passo',
+      content: 'Este é o segundo passo do tour.',
+      selector: '#step2',
+    },
+  ];
+
+  constructor() {}
+
+  startTour() {
+    if (this.tourComponent) {
+      this.highlight = this.steps[this.tourComponent.currentStep].selector;
+      this.tourComponent.startTour();
+    }
+  }
 }

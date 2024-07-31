@@ -29,12 +29,11 @@
 
 .highlight {
   position: relative;
-  background-color: #fff; /* Fundo branco para o destaque */
+  background-color: #fff !important; /* Fundo branco para o destaque */
   border: 2px solid #ccc; /* Borda para definir o destaque */
   border-radius: 5px; /* Arredondar bordas */
   padding: 5px; /* Espaçamento para evitar sobreposição */
-  margin: 0;
-  z-index: 1; /* Garante que o destaque esteja acima dos outros elementos */
+  z-index: 1001 !important; /* Garante que o destaque esteja acima dos outros elementos */
 }
 
 .highlight::before {

@@ -1,3 +1,15 @@
 <div>
-  <router-outlet></router-outlet>
+  <button
+    id="step1"
+    [ngClass]="{ highlight: highlight === '#step1' }"
+    (click)="startTour()"
+  >
+    Iniciar Tour
+  </button>
+  <div id="step2" [ngClass]="{ highlight: highlight === '#step2' }">
+    Outro ponto do tour
+  </div>
+
+  <!-- Inclui o TourComponent e passa os passos -->
+  <app-teste [steps]="steps"></app-teste>
 </div>

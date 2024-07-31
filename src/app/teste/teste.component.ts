@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-teste',
@@ -6,30 +6,19 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./teste.component.css'],
 })
 export class TesteComponent {
+  @Input() steps: { title: string; content: string; selector: string }[] = [];
   showTour = false;
   currentStep = 0;
   highlightedElement: HTMLElement | null = null;
-  steps = [
-    {
-      title: 'Bem-vindo!',
-      content: 'Este é o primeiro passo do tour.',
-      selector: '#step1',
-    },
-    {
-      title: 'Próximo passo',
-      content: 'Este é o segundo passo do tour.',
-      selector: '#step2',
-    },
-  ];
 
-  constructor(private renderer: Renderer2, private elRef: ElementRef) {}
+  constructor(private renderer: Renderer2) {}
 
   get currentStepTitle() {
-    return this.steps[this.currentStep].title;
+    return this.steps[this.currentStep]?.title || '';
   }
 
   get currentStepContent() {
-    return this.steps[this.currentStep].content;
+    return this.steps[this.currentStep]?.content || '';
   }
 
   get currentStepStyle() {
@@ -38,6 +27,8 @@ export class TesteComponent {
     ) as HTMLElement;
     if (element) {
       const rect = element.getBoundingClientRect();
+      console.log(element);
+      console.log(rect);
       // Remove previous highlight
       if (this.highlightedElement) {
         this.renderer.removeClass(this.highlightedElement, 'highlight');
@@ -49,12 +40,11 @@ export class TesteComponent {
         position: 'absolute',
         top: `${rect.bottom + window.scrollY}px`,
         left: `${rect.left + window.scrollX}px`,
-        width: `${rect.width}px`,
         background: '#fff',
         border: '1px solid #ccc',
         padding: '10px',
         borderRadius: '5px',
-        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+        boxShadow: 'none', // Remove shadow from popup
       };
     }
     return {};
