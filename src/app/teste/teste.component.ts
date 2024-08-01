@@ -27,8 +27,6 @@ export class TesteComponent {
     ) as HTMLElement;
     if (element) {
       const rect = element.getBoundingClientRect();
-      console.log(element);
-      console.log(rect);
       // Remove previous highlight
       if (this.highlightedElement) {
         this.renderer.removeClass(this.highlightedElement, 'highlight');
@@ -40,6 +38,7 @@ export class TesteComponent {
         position: 'absolute',
         top: `${rect.bottom + window.scrollY}px`,
         left: `${rect.left + window.scrollX}px`,
+        width: `${rect.width}px`,
         background: '#fff',
         border: '1px solid #ccc',
         padding: '10px',

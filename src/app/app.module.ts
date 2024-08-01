@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { WalkthroughcustomComponent } from './walkthroughcustom/walkthroughcustom.component';
 import { TesteComponent } from './teste/teste.component';
+import { AngularGuiderService } from 'angular-guider';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { TesteComponent } from './teste/teste.component';
     BdcWalkModule,
   ],
   exports: [BdcWalkModule],
-  providers: [],
+  providers: [AngularGuiderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

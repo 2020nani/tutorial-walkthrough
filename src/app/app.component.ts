@@ -26,9 +26,6 @@ export class AppComponent {
   constructor() {}
 
   startTour() {
-    if (this.tourComponent) {
-      this.highlight = this.steps[this.tourComponent.currentStep].selector;
-      this.tourComponent.startTour();
-    }
+    this.tourComponent.startTour();
   }
 }
