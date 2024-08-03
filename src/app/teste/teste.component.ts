@@ -30,9 +30,14 @@ export class TesteComponent {
       // Remove previous highlight
       if (this.highlightedElement) {
         this.renderer.removeClass(this.highlightedElement, 'highlight');
+        this.renderer.removeClass(
+          this.highlightedElement,
+          'disable-interaction'
+        );
       }
       this.highlightedElement = element;
       this.renderer.addClass(this.highlightedElement, 'highlight');
+      this.renderer.addClass(this.highlightedElement, 'disable-interaction');
       // Calculate position for popup
       return {
         position: 'absolute',

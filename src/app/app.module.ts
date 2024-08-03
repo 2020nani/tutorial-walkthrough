@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { WalkthroughcustomComponent } from './walkthroughcustom/walkthroughcustom.component';
 import { TesteComponent } from './teste/teste.component';
 import { AngularGuiderService } from 'angular-guider';
+import { MyTooltipDirective } from './my-tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AngularGuiderService } from 'angular-guider';
     HomeComponent,
     WalkthroughcustomComponent,
     TesteComponent,
+    MyTooltipDirective,
   ],
   imports: [
     BrowserModule,

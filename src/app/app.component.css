@@ -63,3 +63,34 @@ main {
   border-radius: 5px; /* Arredondar bordas do destaque */
   z-index: -1; /* Garante que o destaque esteja abaixo do conteúdo */
 }
+
+.disable-interaction {
+  pointer-events: none;
+}
+
+.tooltip {
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid black;
+  transform: translateY(-50%);
+}
+
+.teste-tooltip {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}

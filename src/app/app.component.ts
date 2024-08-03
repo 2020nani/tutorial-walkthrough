@@ -26,6 +26,7 @@ export class AppComponent {
   constructor() {}
 
   startTour() {
+    console.log('chamou');
     this.tourComponent.startTour();
   }
 }
